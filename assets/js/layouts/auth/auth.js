@@ -4,7 +4,14 @@ Auth pages js
 
 "use strict";
 
-//Init Pageloader
+import {
+    initPageLoader,
+    changeDemoImages,
+    initDarkMode,
+    initAnimatedModals,
+    env,
+} from "../../functions";
+
 initPageLoader();
 
 $(document).ready(function () {
@@ -23,7 +30,7 @@ $(document).ready(function () {
 
     //Login submission
     $("#login-submit").on("click", function () {
-        var $this = $(this);
+        let $this = $(this);
         $this.addClass("is-loading");
         setTimeout(function () {
             $this.removeClass("is-loading");
@@ -43,8 +50,8 @@ $(document).ready(function () {
     if ($("#huro-signup").length) {
         //Steps
         $(".step-icon").on("click", function () {
-            var targetStep = $(this).attr("data-step");
-            var progressValue = $(this).attr("data-progress");
+            let targetStep = $(this).attr("data-step");
+            let progressValue = $(this).attr("data-progress");
             $(this).prevAll().addClass("is-done");
             $(this).removeClass("is-done").addClass("is-active");
             $(this).nextAll().removeClass("is-active is-done");
@@ -56,14 +63,14 @@ $(document).ready(function () {
                 $(".card-bg").addClass("faded");
             }
 
-            if (targetStep == "signup-step-1") {
+            if (targetStep === "signup-step-1") {
                 $(".card-bg").removeClass("faded");
             }
         });
 
         //Step 1 confirmation
         $("#confirm-step-1").on("click", function () {
-            var $this = $(this);
+            let $this = $(this);
             $this.addClass("is-loading");
             setTimeout(function () {
                 $this.removeClass("is-loading");
@@ -76,14 +83,14 @@ $(document).ready(function () {
 
         //Avatar carousel selector
         if ($(".avatar-carousel").length) {
-            var carousel = $(".avatar-carousel");
+            let carousel = $(".avatar-carousel");
 
             carousel.on("init", function () {
                 feather.replace();
             });
 
             carousel.on("afterChange", function () {
-                var currentAvatarUrl = $(".avatar-carousel")
+                let currentAvatarUrl = $(".avatar-carousel")
                     .find(".slick-current img")
                     .attr("src");
                 $(".picture-selector .image-container img").attr(
@@ -108,7 +115,7 @@ $(document).ready(function () {
             //Go to next avatar/skill when clicking on it
             $(".slick-slider").on("click", ".slick-slide", function (e) {
                 e.stopPropagation();
-                var index = $(this).data("slick-index");
+                let index = $(this).data("slick-index");
                 if ($(".slick-slider").slick("slickCurrentSlide") !== index) {
                     $(".slick-slider").slick("slickGoTo", index);
                 }
@@ -145,7 +152,7 @@ $(document).ready(function () {
 
         //Step 2 confirmation
         $("#confirm-step-2").on("click", function () {
-            var $this = $(this);
+            let $this = $(this);
             $this.addClass("is-loading");
             setTimeout(function () {
                 $this.removeClass("is-loading");
@@ -158,7 +165,7 @@ $(document).ready(function () {
 
         //Go to onboarding
         $("#finish-signup").on("click", function () {
-            var $this = $(this);
+            let $this = $(this);
             $this.addClass("is-loading");
             $(".step-icon.is-inactive").removeClass("is-inactive").trigger("click");
             setTimeout(function () {

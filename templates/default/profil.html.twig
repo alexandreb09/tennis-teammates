@@ -12,7 +12,7 @@
 {% block body %}
     <div id="huro-app" class="app-wrapper">
         <div class="app-overlay"></div>
-        <!--Pageloader-->
+
         <!-- Pageloader -->
         <div class="pageloader"></div>
         <div class="infraloader is-active"></div>
@@ -183,7 +183,7 @@
             </div>
         </nav>
         <!--Mobile sidebar-->
-        <div class="mobile-main-sidebar">
+        <div class="mobile-main-sidebar has-labels">
             <div class="inner">
                 <ul class="icon-side-menu">
                     <li>
@@ -243,7 +243,7 @@
                     </label>
                 </div>
                 <a class="menu-item is-flex right-panel-trigger" data-panel="languages-panel">
-                    <img src="{{ asset('build/img/icons/flags/united-states-of-america.svg') }}" alt="Drapeau Etats Unis">
+                    <img src="assets/img/icons/flags/united-states-of-america.svg" alt="">
                 </a>
                 <a href="/admin-profile-notifications.html" class="menu-item is-flex">
                     <i data-feather="bell"></i>
@@ -254,8 +254,8 @@
             </div>
 
         </div>
-        <!--Sidebar-->
-        <div class="main-sidebar">
+        <!--Sidebar float-->
+        <div class="main-sidebar is-float has-labels">
             <div class="sidebar-brand">
                 <a href="/">
                     <img class="light-image" src="assets/img/logos/logo/logo.svg" alt="">
@@ -395,7 +395,7 @@
 
             <div class="right-panel">
                 <div class="right-panel-head">
-                    <h3>Selectionner la langue</h3>
+                    <h3>Select Language</h3>
                     <a class="close-panel">
                         <i data-feather="chevron-right"></i>
                     </a>
@@ -406,7 +406,7 @@
                             <div class="language-option">
                                 <input type="radio" name="language_selection" checked>
                                 <div class="language-option-inner">
-                                    <img src="{{ asset('build/img/icons/flags/united-states-of-america.svg') }}" alt="Drapeau Etats Unis">
+                                    <img src="assets/img/icons/flags/united-states-of-america.svg" alt="">
                                     <div class="indicator">
                                         <i data-feather="check"></i>
                                     </div>
@@ -418,7 +418,7 @@
                             <div class="language-option">
                                 <input type="radio" name="language_selection">
                                 <div class="language-option-inner">
-                                    <img src="{{ asset('build/img/icons/flags/france.svg') }}" alt="France">
+                                    <img src="assets/img/icons/flags/france.svg" alt="">
                                     <div class="indicator">
                                         <i data-feather="check"></i>
                                     </div>
@@ -754,98 +754,6 @@
 
             </div>
 
-        </div>
-        <!--Search panel-->
-        <div id="search-panel" class="right-panel-wrapper is-search is-left">
-            <div class="panel-overlay"></div>
-
-            <div class="right-panel">
-                <div class="right-panel-head">
-                    <img class="light-image" src="assets/img/logos/logo/logo.svg" alt="" />
-                    <img class="dark-image" src="assets/img/logos/logo/logo-light.svg" alt="" />
-                    <a class="close-panel">
-                        <i data-feather="chevron-left"></i>
-                    </a>
-                </div>
-                <div class="right-panel-body has-slimscroll">
-                    <div class="field">
-                        <div class="control has-icon">
-                            <input type="text" class="input is-rounded search-input" placeholder="Search...">
-                            <div class="form-icon">
-                                <i data-feather="search"></i>
-                            </div>
-                            <div class="search-results has-slimscroll"></div>
-                        </div>
-                    </div>
-
-                    <div class="recent">
-                        <h4>Recently viewed</h4>
-                        <div class="recent-block">
-                            <a class="media-flex-center">
-                                <div class="h-icon is-info is-rounded is-small">
-                                    <i data-feather="chrome"></i>
-                                </div>
-                                <div class="flex-meta">
-                                    <span>Browser Support</span>
-                                    <span>Blog post</span>
-                                </div>
-                            </a>
-                            <a class="media-flex-center">
-                                <div class="h-icon is-orange is-rounded is-small">
-                                    <i data-feather="tv"></i>
-                                </div>
-                                <div class="flex-meta">
-                                    <span>Twitch API</span>
-                                    <span>Blog post</span>
-                                </div>
-                            </a>
-                            <a class="media-flex-center">
-                                <div class="h-icon is-green is-rounded is-small">
-                                    <i data-feather="twitter"></i>
-                                </div>
-                                <div class="flex-meta">
-                                    <span>Twitter Auth</span>
-                                    <span>Blog post</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="recent">
-                        <h4>Recent Members</h4>
-                        <div class="recent-block">
-                            <a class="media-flex-center">
-                                <div class="h-avatar is-small">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" alt="" data-user-popover="0">
-                                </div>
-                                <div class="flex-meta">
-                                    <span>Alice C.</span>
-                                    <span>Software Engineer</span>
-                                </div>
-                            </a>
-                            <a class="media-flex-center">
-                                <div class="h-avatar is-small">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/13.jpg" alt="" data-user-popover="6">
-                                </div>
-                                <div class="flex-meta">
-                                    <span>Tara S.</span>
-                                    <span>UI/UX Designer</span>
-                                </div>
-                            </a>
-                            <a class="media-flex-center">
-                                <div class="h-avatar is-small">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/22.jpg" alt="" data-user-popover="5">
-                                </div>
-                                <div class="flex-meta">
-                                    <span>Jimmy H.</span>
-                                    <span>Project Manager</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
         <!--Page body-->
 
@@ -1906,7 +1814,7 @@
                             </div>
 
                             <a class="toolbar-link right-panel-trigger" data-panel="languages-panel">
-                                <img src="{{ asset('build/img/icons/flags/united-states-of-america.svg') }}" alt="Drapeau Etats Unis">
+                                <img src="assets/img/icons/flags/united-states-of-america.svg" alt="">
                             </a>
 
                             <div class="toolbar-notifications is-hidden-mobile">
@@ -1986,8 +1894,10 @@
                     <div class="page-content-inner">
                         <!--Page content goes here-->
                     </div>
+
                 </div>
             </div>
+
         </div>
     </div>
 {% endblock %}
