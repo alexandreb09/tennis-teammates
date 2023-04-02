@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <section class="section has-background-primary is-fullheight">
+        <div class="container">
+            <div class="is-max-w-md mx-auto">
+                <div class="mb-6 has-text-centered">
+                    <a href="{{ path('homepage')}}" class="svg-bg-transparent">
+                        {{ source('@public_path'~asset('/icons/logo-2.svg')) }}
+                    </a>
+                </div>
+                <div class="box has-text-centered py-6 px-5">
+                    <span class="subtitle is-spaced">Rejoins la communauté</span>
+                    <h4 class="title is-size-3">Créer un compte</h4>
+
+                    <div class="has-text-left">
+                        {{ form_start(registrationForm) }}
+
+                        {{ form_errors(registrationForm) }}
+
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword) }}
+{#                        {{ form_row(registrationForm.agreeTerms) }}#}
+
+                        {{ form_row(registrationForm._token) }}
+
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-primary is-fullwidth">Créer un compte</button>
+                            </div>
+                        </div>
+
+                        {{ form_end(registrationForm, {render_rest: false}) }}
+                    </div>
+{#                    <div class="field is-horizontal">#}
+{#                        <div class="field-body">#}
+{#                            <div class="field">#}
+{#                                <div class="control">#}
+{#                                    <input class="input" type="text" placeholder="Prénom">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="field">#}
+{#                                <div class="control">#}
+{#                                    <input class="input" type="text" placeholder="Nom">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+                </div>
+                <div class="has-text-centered has-text-white">
+                    <p>Vous avez un compte ? <a class="has-text-grey-light" href="{{ path('app_login') }}">Connectez-vous</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

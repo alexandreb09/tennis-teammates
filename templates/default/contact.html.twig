@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block stylesheets %}
+    {#    {{ encore_entry_link_tags('login') }} #}
+{% endblock %}
+
+{% block javascripts %}
+    {#    {{ encore_entry_script_tags('login') }} #}
+{% endblock %}
+
+{% block body %}
+    <section class="section">
+        <div class="container">
+            <div class="columns is-desktop is-vcentered">
+                <div class="column is-6-desktop">
+                    <div class="is-max-w-96 pb-4">
+                        <h2 class="title">Nous sommes impatients de vous lire!</h2>
+                    </div>
+                    <div class="mt-6 has-text-black">
+                        <div class="mb-5">
+                            <span class="subtitle is-spaced">Vous souhaitez nous écrire, vous êtes au bon endroit.</span>
+                        </div>
+                        <div class="mb-5">
+                            <span class="subtitle is-spaced">
+                                Si vous rencontrez des difficultés ou un problème sur l'application,
+                                essayez de nous décrire au mieux votre problème. Nous ferons de notre mieux pour vous aider!
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-6-desktop">
+                    <form>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Objet du message">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Nom">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="email" placeholder="email@example.com">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" type="text" placeholder="Message..."></textarea>
+                            </div>
+                        </div>
+                        <div class="field mb-4">
+                            <div class="control">
+                                <div class="file has-name is-right is-fullwidth">
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" placeholder="Sélectionner un fichier...">
+                                        <span class="file-cta">
+                                            <span class="file-label">Parcourir</span>
+                                        </span>
+                                        <span class="file-name">Sélectionner un fichier</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="is-flex is-justify-content-space-between is-align-items-center">
+                            <div class="control">
+                                <label class="checkbox">
+                                    <input class="checkbox" type="checkbox" name="terms" value="1">
+                                    <span>J'accepte les conditions d'utilisation</span>
+                                </label>
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary is-fullwidth" type="submit">Envoyer</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

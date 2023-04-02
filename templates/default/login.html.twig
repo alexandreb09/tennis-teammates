@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block body %}
+    <section class="section has-background-primary is-fullheight">
+        <div class="container">
+            <div class="is-max-w-md mx-auto">
+                <div class="mb-6 has-text-centered">
+                    <a href="{{ path('homepage')}}" class="svg-bg-transparent">
+                        {{ source('@public_path'~asset('/icons/logo-2.svg')) }}
+                    </a>
+                </div>
+                <div class="box  py-6 px-5">
+                    <form action="{{ path('app_login') }}" method="post">
+    {#                    <span class="subtitle is-spaced"></span>#}
+                        <h4 class="title has-text-centered is-size-3">Connexion</h4>
+
+                        {% if error %}
+                            <div class="field">
+                                <div class="notification is-danger is-light">
+                                    <button class="delete" onclick="this.parentElement.style.display='none'" ></button>
+                                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="field">
+                            <label class="label required" for="login_form_email">Email</label>
+                            <div class="control has-icon has-icons-left">
+                                <input type="email" id="login_form_email" name="_username" required="required" class="input" placeholder="Email" value="{{ last_username }}">
+                                <span class="icon is-left"><i class="fa fa-envelope"></i></span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label required" for="login_form_password">Mot de passe</label>
+                            <div class="control has-icon has-icons-left">
+                                <input name="_password" placeholder="Mot de passe" type="password" id="login_form_password" required="required" class="input">
+                                <span class="icon is-left"><i class="fa fa-lock"></i></span>
+                            </div>
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-primary is-fullwidth">Connexion</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="has-text-centered has-text-white mt-2">
+                    <p>
+                        Vous n'avez pas de compte ?
+                        <a class="has-text-grey-light" href="{{ path('app_register') }}">Créer un compte</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
