@@ -43,10 +43,6 @@
     border-color: darken($primary, 2%);
 
     .sidebar-inner {
-      .naver {
-        background: $white;
-      }
-
       .icon-menu,
       .bottom-menu {
         li {
@@ -207,27 +203,6 @@
     width: 100%;
     position: relative;
 
-    .naver {
-      position: absolute;
-      top: -150px;
-      left: 0;
-      height: 64px;
-      width: 4px;
-      border-radius: 100px;
-      background: $primary;
-      transition: all 0.3s;
-
-      &.is-search-results {
-        margin-top: 240px;
-      }
-
-      &.from-bottom {
-        top: unset !important;
-        bottom: -64px;
-        margin-top: 0 !important;
-      }
-    }
-
     .icon-menu,
     .bottom-menu {
       li {
@@ -239,6 +214,8 @@
         justify-content: center;
 
         &.is-active {
+          border-left: solid 4px darken($accent, 2%);
+
           a svg {
             stroke: $primary;
           }
@@ -458,10 +435,6 @@ body {
         }
       }
 
-      .naver {
-        background: $accent;
-      }
-
       .icon-menu,
       .bottom-menu {
         li {
@@ -573,10 +546,6 @@ body {
         border-color: darken($accent, 2%) !important;
 
         .sidebar-inner {
-          .naver {
-            opacity: 0.8;
-          }
-
           .icon-menu,
           .bottom-menu {
             li {

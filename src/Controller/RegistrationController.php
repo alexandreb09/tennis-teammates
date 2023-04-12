@@ -48,6 +48,7 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
 
             // generate a signed url and email it to the user
+            // TODO: setup email sending
 //            $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
 //                (new TemplatedEmail())
 //                    ->from(new Address('tennis-teammates@gmail.com', 'Tennis Teammates'))

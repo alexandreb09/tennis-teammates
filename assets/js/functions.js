@@ -178,9 +178,24 @@ function initSidebar() {
 
         if ($(this).hasClass('push-block')) {
             $('.nav-trigger .menu-toggle .icon-box-toggle').toggleClass("active");
-            $('#' + sidebar).toggleClass('is-active');
+            // $('#' + sidebar).toggleClass('is-active');
+            // if ($("#sidebar-block").hasClass("is-bordered")) {
+            //     // $(".sidebar-block").addClass("sidebar-block");
+            //     $("#sidebar-block").addClass("main-sidebar is-float");
+            // } else {
+            //     $("#sidebar-block").removeClass("main-sidebar is-float");
+            //     // $(".sidebar-block").removeClass("sidebar-block");
+            // }
+            $('#sidebar-block').toggleClass('main-sidebar is-float is-active sidebar-block is-bordered');
+            $('#sidebar-inner').toggleClass('sidebar-inner sidebar-block-inner pt-6')
+            $("#sidebar-block ul a span.text").toggle();
+            $('#sidebar-inner ul').toggleClass('icon-menu')
+            $('#sidebar-inner ul a').toggleClass('single-link')
+            $("#sidebar-block span svg").toggleClass("feather feather-activity sidebar-svg feather-grid");
+
+            $('.sidebar-block-footer, .sidebar-block-header').toggle();
+
             $('.view-wrapper').toggleClass('is-pushed-block');
-            $('.sidebar-block').toggleClass('is-bordered');
             $body.toggleClass('opened');
 
             if ($(this).hasClass('messages-push')) {

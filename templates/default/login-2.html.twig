@@ -59,18 +59,20 @@
 
                     <!--Form-->
                     <div class="form-card">
-                        <form action="{{ path('app_login') }}" method="post">
+                        <form action="{{ path('app_login') }}" method="post" id="login-form">
                             <div id="signin-form" class="login-form">
                                 <!-- Errors -->
                                 {% if error %}
                                     <div class="field">
-                                        <div class="notification is-danger is-light">
-                                            <button class="delete" onclick="this.parentElement.style.display='none'" ></button>
-                                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                                        <div class="message is-danger">
+                                            <a class="delete"></a>
+                                            <div class="message-body">
+                                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                                            </div>
                                         </div>
                                     </div>
                                 {% endif %}
-                                <!-- Input -->
+                                <!-- Input email -->
                                 <div class="field">
                                     <div class="control has-icon">
                                         <label for="login_form_email"></label>
@@ -80,7 +82,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                <!-- Input -->
+                                <!-- Input password -->
                                 <div class="field">
                                     <div class="control has-icon">
                                         <label for="login_form_password"></label>
@@ -104,7 +106,7 @@
 
                                 <!-- Submit -->
                                 <div class="control login">
-                                    <button class="button h-button is-primary is-bold is-fullwidth is-raised">Connexion</button>
+                                    <button id="login-submit" class="button h-button is-primary is-bold is-fullwidth is-raised">Connexion</button>
                                 </div>
                             </div>
                         </form>

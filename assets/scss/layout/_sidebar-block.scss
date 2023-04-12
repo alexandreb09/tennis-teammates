@@ -99,14 +99,15 @@
       cursor: pointer;
 
       &.is-active {
+
         a {
           font-weight: 500;
           color: $primary;
         }
 
-        > a {
-          font-weight: 600;
-        }
+        //> a {
+        //  font-weight: 500;
+        //}
       }
 
       &.divider {

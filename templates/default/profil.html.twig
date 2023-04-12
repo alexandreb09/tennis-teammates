@@ -12,10 +12,10 @@
 {% block body %}
     <div id="huro-app" class="app-wrapper">
         <div class="app-overlay"></div>
-
+        <!--Pageloader-->
         <!-- Pageloader -->
-        <div class="pageloader"></div>
-        <div class="infraloader is-active"></div>
+        <div class="pageloader is-full"></div>
+        <div class="infraloader is-full is-active"></div>
         <!--Mobile navbar-->
         <nav class="navbar mobile-navbar no-shadow is-hidden-desktop is-hidden-tablet" aria-label="main navigation">
             <div class="container">
@@ -56,10 +56,13 @@
                                         <li>
                                             <a class="notification-item">
                                                 <div class="img-left">
-                                                    <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" />
+                                                    <img class="user-photo" alt=""
+                                                         src="https://via.placeholder.com/150x150"
+                                                         data-demo-src="assets/img/avatars/photos/7.jpg"/>
                                                 </div>
                                                 <div class="user-content">
-                                                    <p class="user-info"><span class="name">Alice C.</span> left a comment.</p>
+                                                    <p class="user-info"><span class="name">Alice C.</span> left a
+                                                        comment.</p>
                                                     <p class="time">1 hour ago</p>
                                                 </div>
                                             </a>
@@ -67,10 +70,13 @@
                                         <li>
                                             <a class="notification-item">
                                                 <div class="img-left">
-                                                    <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/12.jpg" />
+                                                    <img class="user-photo" alt=""
+                                                         src="https://via.placeholder.com/150x150"
+                                                         data-demo-src="assets/img/avatars/photos/12.jpg"/>
                                                 </div>
                                                 <div class="user-content">
-                                                    <p class="user-info"><span class="name">Joshua S.</span> uploaded a file.</p>
+                                                    <p class="user-info"><span class="name">Joshua S.</span> uploaded a
+                                                        file.</p>
                                                     <p class="time">2 hours ago</p>
                                                 </div>
                                             </a>
@@ -78,10 +84,13 @@
                                         <li>
                                             <a class="notification-item">
                                                 <div class="img-left">
-                                                    <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/13.jpg" />
+                                                    <img class="user-photo" alt=""
+                                                         src="https://via.placeholder.com/150x150"
+                                                         data-demo-src="assets/img/avatars/photos/13.jpg"/>
                                                 </div>
                                                 <div class="user-content">
-                                                    <p class="user-info"><span class="name">Tara S.</span> sent you a message.</p>
+                                                    <p class="user-info"><span class="name">Tara S.</span> sent you a
+                                                        message.</p>
                                                     <p class="time">2 hours ago</p>
                                                 </div>
                                             </a>
@@ -89,10 +98,13 @@
                                         <li>
                                             <a class="notification-item">
                                                 <div class="img-left">
-                                                    <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/25.jpg" />
+                                                    <img class="user-photo" alt=""
+                                                         src="https://via.placeholder.com/150x150"
+                                                         data-demo-src="assets/img/avatars/photos/25.jpg"/>
                                                 </div>
                                                 <div class="user-content">
-                                                    <p class="user-info"><span class="name">Melany W.</span> left a comment.</p>
+                                                    <p class="user-info"><span class="name">Melany W.</span> left a
+                                                        comment.</p>
                                                     <p class="time">3 hours ago</p>
                                                 </div>
                                             </a>
@@ -104,14 +116,16 @@
                         <div class="dropdown is-right is-spaced dropdown-trigger user-dropdown">
                             <div class="is-trigger" aria-haspopup="true">
                                 <div class="profile-avatar">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
                                 </div>
                             </div>
                             <div class="dropdown-menu" role="menu">
                                 <div class="dropdown-content">
                                     <div class="dropdown-head">
                                         <div class="h-avatar is-large">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                            <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                 data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
                                         </div>
                                         <div class="meta">
                                             <span>Erik Kovalsky</span>
@@ -183,7 +197,7 @@
             </div>
         </nav>
         <!--Mobile sidebar-->
-        <div class="mobile-main-sidebar has-labels">
+        <div class="mobile-main-sidebar">
             <div class="inner">
                 <ul class="icon-side-menu">
                     <li>
@@ -254,141 +268,150 @@
             </div>
 
         </div>
-        <!--Sidebar float-->
-        <div class="main-sidebar is-float has-labels">
-            <div class="sidebar-brand">
-                <a href="/">
-                    <img class="light-image" src="assets/img/logos/logo/logo.svg" alt="">
-                    <img class="dark-image" src="assets/img/logos/logo/logo-light.svg" alt="">
+        <!--Sidebar-->
+        <div id="sidebar-block" class="sidebar-block">
+            <div class="sidebar-block-header">
+                <a class="sidebar-block-logo" href="/">
+                    <img class="light-image" src="assets/img/logos/logo/logo.svg" alt=""/>
+                    <img class="dark-image" src="assets/img/logos/logo/logo-light.svg" alt=""/>
                 </a>
+                <h3>Huro</h3>
             </div>
-            <div class="sidebar-inner">
-
-                <div class="naver"></div>
-
-                <ul class="icon-menu">
-                    <!-- Activity -->
+            <div id="sidebar-inner" class="sidebar-block-inner" data-simplebar>
+                <ul>
                     <li>
-                        <a href="/admin-dashboards-personal-1.html" id="home-sidebar-menu" data-content="Dashboards">
-                            <i class="sidebar-svg" data-feather="activity"></i>
+                        <a class="single-link" href="/admin-dashboards-personal-1.html">
+                            <span class="icon"><i data-feather="grid"></i></span>
+                            <span class="text">Dashboard</span>
                         </a>
-                    </li> <!-- Layouts -->
+                    </li>
                     <li>
-                        <a href="/admin-grid-users-1.html" id="layouts-sidebar-menu" data-content="Layouts">
-                            <i class="sidebar-svg" data-feather="grid"></i>
+                        <a class="single-link" href="#">
+                            <span class="icon"><i data-feather="briefcase"></i></span>
+                            <span class="text">Projects</span>
                         </a>
-                    </li> <!-- Bounties -->
+                    </li>
+                    <li class="is-active">
+                        <a class="single-link is-active" href="#">
+                            <span class="icon"><i data-feather="message-circle"></i></span>
+                            <span class="text">Messages<span class="badge">3</span></span>
+                        </a>
+                    </li>
                     <li>
-                        <a href="elements-hub.html" id="elements-sidebar-menu" data-content="Elements">
-                            <i class="sidebar-svg" data-feather="box"></i>
+                        <a class="single-link" href="#">
+                            <span class="icon"><i data-feather="book"></i></span>
+                            <span class="text">Collections</span>
                         </a>
-                    </li> <!-- Bugs -->
+                    </li>
                     <li>
-                        <a href="components-hub.html" id="components-sidebar-menu" data-content="Components">
-                            <i class="sidebar-svg" data-feather="cpu"></i>
+                        <a class="single-link" href="#">
+                            <span class="icon"><i data-feather="users"></i></span>
+                            <span class="text">Users</span>
                         </a>
-                    </li> <!-- Messaging -->
-                    <li id="messages-menu">
-                        <a href="admin-messaging-chat.html" id="open-messages" data-content="Messaging">
-                            <i class="sidebar-svg" data-feather="message-circle"></i>
+                    </li>
+                    <li>
+                        <a class="single-link" href="#">
+                            <span class="icon"><i data-feather="mail"></i></span>
+                            <span class="text">Inbox</span>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a class="single-link" href="#">
+                            <span class="icon"><i data-feather="settings"></i></span>
+                            <span class="text">Settings</span>
                         </a>
                     </li>
                 </ul>
+            </div>
+            <div class="sidebar-block-footer">
+                <div id="profile-menu" class="dropdown profile-dropdown dropdown-trigger is-spaced is-up">
+                    <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/8.jpg"
+                         alt=""/>
+                    <span class="status-indicator"></span>
 
-                <!-- User account -->
-                <ul class="bottom-menu">
-                    <!-- Notifications -->
-                    <li class="right-panel-trigger" data-panel="search-panel">
-                        <a href="javascript:void(0);" id="open-search" data-content="Search"><i class="sidebar-svg" data-feather="search"></i></a>
-                        <a href="javascript:void(0);" id="close-search" class="is-hidden is-inactive"><i class="sidebar-svg" data-feather="x"></i></a>
-                    </li> <!-- Wallet -->
-                    <li>
-                        <a href="/admin-profile-settings.html" id="open-settings" data-content="Settings">
-                            <i class="sidebar-svg" data-feather="settings"></i>
-                        </a>
-                    </li> <!-- Profile -->
-                    <li id="user-menu">
-                        <div id="profile-menu" class="dropdown profile-dropdown dropdown-trigger is-spaced is-up">
-                            <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
-                            <span class="status-indicator"></span>
-
-                            <div class="dropdown-menu" role="menu">
-                                <div class="dropdown-content">
-                                    <div class="dropdown-head">
-                                        <div class="h-avatar is-large">
-                                            <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
-                                        </div>
-                                        <div class="meta">
-                                            <span>Erik Kovalsky</span>
-                                            <span>Product Manager</span>
-                                        </div>
-                                    </div>
-                                    <a href="/admin-profile-view.html" class="dropdown-item is-media">
-                                        <div class="icon">
-                                            <i class="lnil lnil-user-alt"></i>
-                                        </div>
-                                        <div class="meta">
-                                            <span>Profile</span>
-                                            <span>View your profile</span>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item is-media layout-switcher">
-                                        <div class="icon">
-                                            <i class="lnil lnil-layout"></i>
-                                        </div>
-                                        <div class="meta">
-                                            <span>Layout</span>
-                                            <span>Switch to admin/webapp</span>
-                                        </div>
-                                    </a>
-                                    <hr class="dropdown-divider">
-                                    <a href="#" class="dropdown-item is-media">
-                                        <div class="icon">
-                                            <i class="lnil lnil-briefcase"></i>
-                                        </div>
-                                        <div class="meta">
-                                            <span>Projects</span>
-                                            <span>All my projects</span>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="dropdown-item is-media">
-                                        <div class="icon">
-                                            <i class="lnil lnil-users-alt"></i>
-                                        </div>
-                                        <div class="meta">
-                                            <span>Team</span>
-                                            <span>Manage your team</span>
-                                        </div>
-                                    </a>
-                                    <hr class="dropdown-divider">
-                                    <a href="#" class="dropdown-item is-media">
-                                        <div class="icon">
-                                            <i class="lnil lnil-cog"></i>
-                                        </div>
-                                        <div class="meta">
-                                            <span>Settings</span>
-                                            <span>Account settings</span>
-                                        </div>
-                                    </a>
-                                    <hr class="dropdown-divider">
-                                    <div class="dropdown-item is-button">
-                                        <button class="button h-button is-primary is-raised is-fullwidth logout-button">
-                                            <span class="icon is-small">
-                                              <i data-feather="log-out"></i>
-                                          </span>
-                                            <span>Logout</span>
-                                        </button>
-                                    </div>
+                    <div class="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-head">
+                                <div class="h-avatar is-large">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/8.jpg" alt=""/>
+                                </div>
+                                <div class="meta">
+                                    <span>Erik Kovalsky</span>
+                                    <span>Product Manager</span>
                                 </div>
                             </div>
+                            <a href="/admin-profile-view.html" class="dropdown-item is-media">
+                                <div class="icon">
+                                    <i class="lnil lnil-user-alt"></i>
+                                </div>
+                                <div class="meta">
+                                    <span>Profile</span>
+                                    <span>View your profile</span>
+                                </div>
+                            </a>
+                            <a class="dropdown-item is-media layout-switcher">
+                                <div class="icon">
+                                    <i class="lnil lnil-layout"></i>
+                                </div>
+                                <div class="meta">
+                                    <span>Layout</span>
+                                    <span>Switch to admin/webapp</span>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider"/>
+                            <a href="#" class="dropdown-item is-media">
+                                <div class="icon">
+                                    <i class="lnil lnil-briefcase"></i>
+                                </div>
+                                <div class="meta">
+                                    <span>Projects</span>
+                                    <span>All my projects</span>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item is-media">
+                                <div class="icon">
+                                    <i class="lnil lnil-users-alt"></i>
+                                </div>
+                                <div class="meta">
+                                    <span>Team</span>
+                                    <span>Manage your team</span>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider"/>
+                            <a href="#" class="dropdown-item is-media">
+                                <div class="icon">
+                                    <i class="lnil lnil-cog"></i>
+                                </div>
+                                <div class="meta">
+                                    <span>Settings</span>
+                                    <span>Account settings</span>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider"/>
+                            <div class="dropdown-item is-button">
+                                <button class="
+                      button
+                      h-button
+                      is-primary is-raised is-fullwidth
+                      logout-button
+                    ">
+                                    <span class="icon is-small">
+                      <i data-feather="log-out"></i>
+                    </span>
+                                    <span>Logout</span>
+                                </button>
+                            </div>
                         </div>
-                    </li>
-
-
-
-                </ul>
+                    </div>
+                </div>
+                <a class="search-link right-panel-trigger" data-panel="search-panel">
+                    <i data-feather="search"></i>
+                </a>
             </div>
         </div>
+
         <!--Languages panel-->
         <div id="languages-panel" class="right-panel-wrapper is-languages">
             <div class="panel-overlay"></div>
@@ -510,8 +533,10 @@
                             <!--Team Member-->
                             <div class="team-card">
                                 <div class="h-avatar">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/12.jpg" alt="">
-                                    <img class="badge" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/12.jpg" alt="">
+                                    <img class="badge" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
                                 </div>
                                 <div class="meta">
                                     <span>Joshua S.</span>
@@ -528,8 +553,10 @@
                             <!--Team Member-->
                             <div class="team-card">
                                 <div class="h-avatar">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/25.jpg" alt="">
-                                    <img class="badge" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/25.jpg" alt="">
+                                    <img class="badge" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
                                 </div>
                                 <div class="meta">
                                     <span>Melany W.</span>
@@ -546,8 +573,10 @@
                             <!--Team Member-->
                             <div class="team-card">
                                 <div class="h-avatar">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/18.jpg" alt="">
-                                    <img class="badge" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/18.jpg" alt="">
+                                    <img class="badge" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
                                 </div>
                                 <div class="meta">
                                     <span>Esteban C.</span>
@@ -564,8 +593,10 @@
                             <!--Team Member-->
                             <div class="team-card">
                                 <div class="h-avatar">
-                                    <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
-                                    <img class="badge" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
+                                    <img class="badge" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/icons/flags/united-states-of-america.svg" alt="">
                                 </div>
                                 <div class="meta">
                                     <span>Tara S.</span>
@@ -584,7 +615,8 @@
                             <!--Project-->
                             <div class="project-card">
                                 <div class="project-inner">
-                                    <img class="project-avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/logos/slicer.svg" alt="">
+                                    <img class="project-avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/icons/logos/slicer.svg" alt="">
                                     <div class="meta">
                                         <span>The slicer project</span>
                                         <span>getslicer.io</span>
@@ -600,13 +632,16 @@
 
                                         <div class="avatar-stack">
                                             <div class="h-avatar is-small">
-                                                <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                     data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
                                             </div>
                                             <div class="h-avatar is-small">
-                                                <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/5.jpg" alt="">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                     data-demo-src="assets/img/avatars/photos/5.jpg" alt="">
                                             </div>
                                             <div class="h-avatar is-small">
-                                                <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                     data-demo-src="assets/img/avatars/photos/8.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -616,7 +651,8 @@
                             <!--Project-->
                             <div class="project-card">
                                 <div class="project-inner">
-                                    <img class="project-avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/logos/metamovies.svg" alt="">
+                                    <img class="project-avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/icons/logos/metamovies.svg" alt="">
                                     <div class="meta">
                                         <span>Metamovies reworked</span>
                                         <span>metamovies.co</span>
@@ -632,10 +668,12 @@
 
                                         <div class="avatar-stack">
                                             <div class="h-avatar is-small">
-                                                <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                     data-demo-src="assets/img/avatars/photos/13.jpg" alt="">
                                             </div>
                                             <div class="h-avatar is-small">
-                                                <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/18.jpg" alt="">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                     data-demo-src="assets/img/avatars/photos/18.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -645,7 +683,8 @@
                             <!--Project-->
                             <div class="project-card">
                                 <div class="project-inner">
-                                    <img class="project-avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/icons/logos/fastpizza.svg" alt="">
+                                    <img class="project-avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/icons/logos/fastpizza.svg" alt="">
                                     <div class="meta">
                                         <span>Fast Pizza redesign</span>
                                         <span>fastpizza.com</span>
@@ -661,10 +700,12 @@
 
                                         <div class="avatar-stack">
                                             <div class="h-avatar is-small">
-                                                <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                     data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
                                             </div>
                                             <div class="h-avatar is-small">
-                                                <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/25.jpg" alt="">
+                                                <img class="avatar" src="https://via.placeholder.com/150x150"
+                                                     data-demo-src="assets/img/avatars/photos/25.jpg" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -688,7 +729,8 @@
                                 <!--Timeline item-->
                                 <div class="timeline-item">
                                     <div class="timeline-icon">
-                                        <img class="avatar" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
+                                        <img class="avatar" src="https://via.placeholder.com/150x150"
+                                             data-demo-src="assets/img/avatars/photos/7.jpg" alt="">
                                     </div>
                                     <div class="timeline-content">
                                         <p>Meeting with Alice</p>
@@ -755,545 +797,103 @@
             </div>
 
         </div>
-        <!--Page body-->
+        <!--Search panel-->
+        <div id="search-panel" class="right-panel-wrapper is-search is-left">
+            <div class="panel-overlay"></div>
 
-        <div id="layouts-sidebar" class="sidebar-panel is-generic">
-            <div class="subpanel-header">
-
-                <div class="dropdown project-dropdown dropdown-trigger is-spaced">
-                    <div class="h-avatar is-small">
-                        <span class="avatar is-fake is-h-green">
-                          <span>H</span>
-                        </span>
+            <div class="right-panel">
+                <div class="right-panel-head">
+                    <img class="light-image" src="assets/img/logos/logo/logo.svg" alt=""/>
+                    <img class="dark-image" src="assets/img/logos/logo/logo-light.svg" alt=""/>
+                    <a class="close-panel">
+                        <i data-feather="chevron-left"></i>
+                    </a>
+                </div>
+                <div class="right-panel-body has-slimscroll">
+                    <div class="field">
+                        <div class="control has-icon">
+                            <input type="text" class="input is-rounded search-input" placeholder="Search...">
+                            <div class="form-icon">
+                                <i data-feather="search"></i>
+                            </div>
+                            <div class="search-results has-slimscroll"></div>
+                        </div>
                     </div>
-                    <span class="status-indicator"></span>
 
-                    <div class="dropdown-menu" role="menu">
-                        <div class="dropdown-content">
-                            <div class="dropdown-block">
+                    <div class="recent">
+                        <h4>Recently viewed</h4>
+                        <div class="recent-block">
+                            <a class="media-flex-center">
+                                <div class="h-icon is-info is-rounded is-small">
+                                    <i data-feather="chrome"></i>
+                                </div>
+                                <div class="flex-meta">
+                                    <span>Browser Support</span>
+                                    <span>Blog post</span>
+                                </div>
+                            </a>
+                            <a class="media-flex-center">
+                                <div class="h-icon is-orange is-rounded is-small">
+                                    <i data-feather="tv"></i>
+                                </div>
+                                <div class="flex-meta">
+                                    <span>Twitch API</span>
+                                    <span>Blog post</span>
+                                </div>
+                            </a>
+                            <a class="media-flex-center">
+                                <div class="h-icon is-green is-rounded is-small">
+                                    <i data-feather="twitter"></i>
+                                </div>
+                                <div class="flex-meta">
+                                    <span>Twitter Auth</span>
+                                    <span>Blog post</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="recent">
+                        <h4>Recent Members</h4>
+                        <div class="recent-block">
+                            <a class="media-flex-center">
                                 <div class="h-avatar is-small">
-                                    <span class="avatar is-fake is-warning">
-                                      <span>D</span>
-                                    </span>
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/7.jpg" alt="" data-user-popover="0">
                                 </div>
-                                <div class="meta">
-                                    <span class="dark-inverted">Delivery App Project</span>
-                                    <span>Food For Good</span>
+                                <div class="flex-meta">
+                                    <span>Alice C.</span>
+                                    <span>Software Engineer</span>
                                 </div>
-                            </div>
-                            <div class="dropdown-block">
+                            </a>
+                            <a class="media-flex-center">
                                 <div class="h-avatar is-small">
-                                    <span class="avatar is-fake is-h-green">
-                                      <span>H</span>
-                                    </span>
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/13.jpg" alt="" data-user-popover="6">
                                 </div>
-                                <div class="meta">
-                                    <span class="dark-inverted">Health and Fitness Dashboard</span>
-                                    <span>Fit'n'Dance</span>
+                                <div class="flex-meta">
+                                    <span>Tara S.</span>
+                                    <span>UI/UX Designer</span>
                                 </div>
-                            </div>
-                            <div class="dropdown-block">
+                            </a>
+                            <a class="media-flex-center">
                                 <div class="h-avatar is-small">
-                                    <span class="avatar is-fake is-info">
-                                      <span>L</span>
-                                    </span>
+                                    <img class="avatar" src="https://via.placeholder.com/150x150"
+                                         data-demo-src="assets/img/avatars/photos/22.jpg" alt="" data-user-popover="5">
                                 </div>
-                                <div class="meta">
-                                    <span class="dark-inverted">Learning Tracker Dashboard</span>
-                                    <span>Fit'n'Dance</span>
+                                <div class="flex-meta">
+                                    <span>Jimmy H.</span>
+                                    <span>Project Manager</span>
                                 </div>
-                            </div>
-                            <div class="dropdown-block">
-                                <div class="h-avatar is-small">
-                                    <span class="avatar is-fake is-h-purple">
-                                      <span>B</span>
-                                    </span>
-                                </div>
-                                <div class="meta">
-                                    <span class="dark-inverted">Banking and Finance Dashboard</span>
-                                    <span>H Bank</span>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <h3 class="no-mb">Layouts</h3>
-                <div class="panel-close">
-                    <i data-feather="x"></i>
-                </div>
-            </div>
-            <div class="inner" data-simplebar>
-                <ul>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Lists <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-view-1.html">
-                                    <i class="lnil lnil-list-alt"></i>
-                                    <span>List View V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-view-2.html">
-                                    <i class="lnil lnil-list-alt"></i>
-                                    <span>List View V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-view-3.html">
-                                    <i class="lnil lnil-list-alt"></i>
-                                    <span>List View V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-view-4.html">
-                                    <i class="lnil lnil-list-alt"></i>
-                                    <span>List View V4</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Flex Lists <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-flex-1.html">
-                                    <i class="lnil lnil-list-alt-1"></i>
-                                    <span>Flex List V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-flex-2.html">
-                                    <i class="lnil lnil-list-alt-1"></i>
-                                    <span>Flex List V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-flex-3.html">
-                                    <i class="lnil lnil-list-alt-1"></i>
-                                    <span>Flex List V3</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Datatable <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-datatable-1.html">
-                                    <i class="lnil lnil-layout-alt"></i>
-                                    <span>Datatable V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-datatable-2.html">
-                                    <i class="lnil lnil-layout-alt"></i>
-                                    <span>Datatable V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-datatable-3.html">
-                                    <i class="lnil lnil-layout-alt"></i>
-                                    <span>Datatable V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-list-datatable-4.html">
-                                    <i class="lnil lnil-layout-alt"></i>
-                                    <span>Datatable V4</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Placeload <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-placeload-1.html">
-                                    <i class="lnil lnil-reload"></i>
-                                    <span>Placeload V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-placeload-2.html">
-                                    <i class="lnil lnil-reload"></i>
-                                    <span>Placeload V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-placeload-3.html">
-                                    <i class="lnil lnil-reload"></i>
-                                    <span>Placeload V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-placeload-4.html">
-                                    <i class="lnil lnil-reload"></i>
-                                    <span>Placeload V4</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Card Grid <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-cards-1.html">
-                                    <i class="lnil lnil-grid-alt"></i>
-                                    <span>Card Grid V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-cards-2.html">
-                                    <i class="lnil lnil-grid-alt"></i>
-                                    <span>Card Grid V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-cards-3.html">
-                                    <i class="lnil lnil-grid-alt"></i>
-                                    <span>Card Grid V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-cards-4.html">
-                                    <i class="lnil lnil-grid-alt"></i>
-                                    <span>Card Grid V4</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Tile Grid <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-tiles-1.html">
-                                    <i class="lnil lnil-layout-alt-2"></i>
-                                    <span>Tile Grid V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-tiles-2.html">
-                                    <i class="lnil lnil-layout-alt-2"></i>
-                                    <span>Tile Grid V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-tiles-3.html">
-                                    <i class="lnil lnil-layout-alt-2"></i>
-                                    <span>Tile Grid V3</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">User Grid <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-users-1.html">
-                                    <i class="lnil lnil-users-alt"></i>
-                                    <span>User Grid V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-users-2.html">
-                                    <i class="lnil lnil-users-alt"></i>
-                                    <span>User Grid V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-users-3.html">
-                                    <i class="lnil lnil-users-alt"></i>
-                                    <span>User Grid V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-grid-users-4.html">
-                                    <i class="lnil lnil-users-alt"></i>
-                                    <span>User Grid V4</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Personal <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-profile-view.html">
-                                    <i class="lnil lnil-user-alt"></i>
-                                    <span>Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-profile-edit-1.html">
-                                    <i class="lnil lnil-pencil"></i>
-                                    <span>Edit Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-profile-notifications.html">
-                                    <i class="lnil lnil-notification"></i>
-                                    <span>Notifications</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-profile-settings.html">
-                                    <i class="lnil lnil-cog"></i>
-                                    <span>Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Pages <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/auth-login-1.html">
-                                    <i class="lnil lnil-pointer-right"></i>
-                                    <span>Login v1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/auth-login-2.html">
-                                    <i class="lnil lnil-pointer-right"></i>
-                                    <span>Login v2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/auth-login-3.html">
-                                    <i class="lnil lnil-pointer-right"></i>
-                                    <span>Login v3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/auth-signup-2.html">
-                                    <i class="lnil lnil-crown"></i>
-                                    <span>Signup v1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/auth-signup-3.html">
-                                    <i class="lnil lnil-crown"></i>
-                                    <span>Signup v2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/auth-signup-1.html">
-                                    <i class="lnil lnil-crown"></i>
-                                    <span>Signup Flow</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-search-results.html">
-                                    <i class="lnil lnil-search-alt"></i>
-                                    <span>Search Results</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-search-empty.html">
-                                    <i class="lnil lnil-search-alt"></i>
-                                    <span>Empty Search</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Subpages <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-saas-billing.html">
-                                    <i class="lnil lnil-credit-card"></i>
-                                    <span>SaaS Billing</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-welcome.html">
-                                    <i class="lnil lnil-door-alt"></i>
-                                    <span>Welcome</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-action-page-1.html">
-                                    <i class="lnil lnil-thunderbolt"></i>
-                                    <span>Action Page V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-action-page-2.html">
-                                    <i class="lnil lnil-thunderbolt"></i>
-                                    <span>Action Page V2</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Projects <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-projects-projects.html">
-                                    <i class="lnil lnil-grid-alt"></i>
-                                    <span>Projects V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-projects-projects-2.html">
-                                    <i class="lnil lnil-grid-alt"></i>
-                                    <span>Projects V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-projects-projects-3.html">
-                                    <i class="lnil lnil-grid-alt"></i>
-                                    <span>Projects V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-projects-project.html">
-                                    <i class="lnil lnil-layout"></i>
-                                    <span>Project Details</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-kanban-board.html">
-                                    <i class="lnil lnil-layout-alt-1"></i>
-                                    <span>Kanban Board</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Utility <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-utility-account-confirm.html">
-                                    <i class="lnil lnil-thunderbolt"></i>
-                                    <span>Confirm Account</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-utility-promotion.html">
-                                    <i class="lnil lnil-magnet"></i>
-                                    <span>Promotion Page</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-utility-invoice.html">
-                                    <i class="lnil lnil-calculator-alt"></i>
-                                    <span>Invoice</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-utility-status.html">
-                                    <i class="lnil lnil-checkmark-circle"></i>
-                                    <span>App Status</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Onboarding <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/admin-onboarding-page-1.html">
-                                    <i class="lnil lnil-train"></i>
-                                    <span>Onboarding V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-onboarding-page-2.html">
-                                    <i class="lnil lnil-train-alt"></i>
-                                    <span>Onboarding V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-onboarding-page-3.html">
-                                    <i class="lnil lnil-car"></i>
-                                    <span>Onboarding V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-onboarding-page-4.html">
-                                    <i class="lnil lnil-car-alt"></i>
-                                    <span>Onboarding V4</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/admin-onboarding-page-5.html">
-                                    <i class="lnil lnil-train"></i>
-                                    <span>Onboarding V5</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Error Pages <i data-feather="chevron-right"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a class="is-submenu" href="/error-page-1.html">
-                                    <i class="lnil lnil-cross-circle"></i>
-                                    <span>Error 404 V1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/error-page-2.html">
-                                    <i class="lnil lnil-cross-circle"></i>
-                                    <span>Error 404 V2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/error-page-3.html">
-                                    <i class="lnil lnil-cross-circle"></i>
-                                    <span>Error 404 V3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/error-page-4.html">
-                                    <i class="lnil lnil-cross-circle"></i>
-                                    <span>Error 404 V4</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="is-submenu" href="/error-page-5.html">
-                                    <i class="lnil lnil-cross-circle"></i>
-                                    <span>Error 500 V1</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+
             </div>
         </div>
+        <!--Page body-->
+
         <div class="mobile-subsidebar">
             <div class="inner">
                 <div class="sidebar-title">
@@ -1360,7 +960,8 @@
                     </li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Datatable <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Datatable <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1391,7 +992,8 @@
                     </li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Placeload <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Placeload <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1423,7 +1025,8 @@
                     <li class="divider"></li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Card Grid <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Card Grid <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1454,7 +1057,8 @@
                     </li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Tile Grid <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Tile Grid <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1479,7 +1083,8 @@
                     </li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">User Grid <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">User Grid <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1511,7 +1116,8 @@
                     <li class="divider"></li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Personal <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Personal <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1597,7 +1203,8 @@
                     </li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Subpages <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Subpages <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1628,7 +1235,8 @@
                     </li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Projects <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Projects <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1671,7 +1279,8 @@
                     <li class="divider"></li>
                     <li class="has-children">
                         <div class="collapse-wrap">
-                            <a href="javascript:void(0);" class="parent-link">Utility <i data-feather="chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="parent-link">Utility <i
+                                        data-feather="chevron-right"></i></a>
                         </div>
                         <ul>
                             <li>
@@ -1781,14 +1390,14 @@
             </div>
         </div>
         <!-- Content Wrapper -->
-        <div class="view-wrapper" data-naver-offset="214" data-menu-item="#layouts-sidebar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+        <div class="view-wrapper view-wrapper-full" data-mobile-item="#home-sidebar-menu-mobile" data-sidebar-open>
 
             <div class="page-content-wrapper">
                 <div class="page-content is-relative">
 
                     <div class="page-title has-text-centered">
                         <!-- Sidebar Trigger -->
-                        <div class="huro-hamburger nav-trigger push-resize" data-sidebar="layouts-sidebar">
+                        <div class="huro-hamburger nav-trigger push-block" data-sidebar="sidebar-block">
                             <span class="menu-toggle has-chevron">
                               <span class="icon-box-toggle">
                                   <span class="rotate">
@@ -1830,17 +1439,21 @@
                                                     <h6 class="heading-title">Notifications</h6>
                                                 </div>
                                                 <div class="heading-right">
-                                                    <a class="notification-link" href="/admin-profile-notifications.html">See all</a>
+                                                    <a class="notification-link"
+                                                       href="/admin-profile-notifications.html">See all</a>
                                                 </div>
                                             </div>
                                             <ul class="notification-list">
                                                 <li>
                                                     <a class="notification-item">
                                                         <div class="img-left">
-                                                            <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/7.jpg" />
+                                                            <img class="user-photo" alt=""
+                                                                 src="https://via.placeholder.com/150x150"
+                                                                 data-demo-src="assets/img/avatars/photos/7.jpg"/>
                                                         </div>
                                                         <div class="user-content">
-                                                            <p class="user-info"><span class="name">Alice C.</span> left a comment.</p>
+                                                            <p class="user-info"><span class="name">Alice C.</span> left
+                                                                a comment.</p>
                                                             <p class="time">1 hour ago</p>
                                                         </div>
                                                     </a>
@@ -1848,10 +1461,13 @@
                                                 <li>
                                                     <a class="notification-item">
                                                         <div class="img-left">
-                                                            <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/12.jpg" />
+                                                            <img class="user-photo" alt=""
+                                                                 src="https://via.placeholder.com/150x150"
+                                                                 data-demo-src="assets/img/avatars/photos/12.jpg"/>
                                                         </div>
                                                         <div class="user-content">
-                                                            <p class="user-info"><span class="name">Joshua S.</span> uploaded a file.</p>
+                                                            <p class="user-info"><span class="name">Joshua S.</span>
+                                                                uploaded a file.</p>
                                                             <p class="time">2 hours ago</p>
                                                         </div>
                                                     </a>
@@ -1859,10 +1475,13 @@
                                                 <li>
                                                     <a class="notification-item">
                                                         <div class="img-left">
-                                                            <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/13.jpg" />
+                                                            <img class="user-photo" alt=""
+                                                                 src="https://via.placeholder.com/150x150"
+                                                                 data-demo-src="assets/img/avatars/photos/13.jpg"/>
                                                         </div>
                                                         <div class="user-content">
-                                                            <p class="user-info"><span class="name">Tara S.</span> sent you a message.</p>
+                                                            <p class="user-info"><span class="name">Tara S.</span> sent
+                                                                you a message.</p>
                                                             <p class="time">2 hours ago</p>
                                                         </div>
                                                     </a>
@@ -1870,10 +1489,13 @@
                                                 <li>
                                                     <a class="notification-item">
                                                         <div class="img-left">
-                                                            <img class="user-photo" alt="" src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/photos/25.jpg" />
+                                                            <img class="user-photo" alt=""
+                                                                 src="https://via.placeholder.com/150x150"
+                                                                 data-demo-src="assets/img/avatars/photos/25.jpg"/>
                                                         </div>
                                                         <div class="user-content">
-                                                            <p class="user-info"><span class="name">Melany W.</span> left a comment.</p>
+                                                            <p class="user-info"><span class="name">Melany W.</span>
+                                                                left a comment.</p>
                                                             <p class="time">3 hours ago</p>
                                                         </div>
                                                     </a>
@@ -1899,5 +1521,7 @@
             </div>
 
         </div>
+
+        <!--Load Mapbox-->
     </div>
 {% endblock %}

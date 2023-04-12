@@ -7,41 +7,12 @@ import '../popover';
 import '../widgets';
 import '../touch';
 
-const feather = require('feather-icons');
-import {
-    env,
-    changeDemoImages,
-    initAnimatedModals,
-    initDarkMode,
-    initPageLoader
-} from "../functions";
-
-// initPageLoader();
-
 $(document).ready(function () {
-    // if (env === "development") {
-    //     //Change demo images
-    //     changeDemoImages();
-    // }
-    //
-    // feather.replace();
-    //
-    // //Dark Mode
-    // initDarkMode();
-    //
-    // //Regular Modals
-    // initAnimatedModals();
-    //
-    // //Login submission
-    // $("#login-submit").on("click", function () {
-    //     let $this = $(this);
-    //     $this.addClass("is-loading");
-    //     setTimeout(function () {
-    //         $this.removeClass("is-loading");
-    //         $("#login-form").submit();
-    //     }, 1000);
-    // });
-    //
+    //Login submission
+    $("#login-form").on("submit", function () {
+        $("#login-submit").addClass("is-loading disabled");
+    });
+
     // //Reset password
     // $("#forgot-link, #cancel-recover").on("click", function () {
     //     $(this)
