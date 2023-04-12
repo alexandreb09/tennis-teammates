@@ -41,7 +41,6 @@ import {
     initDarkMode,
     initBgImages,
     setActivelink,
-    updateSidebarNaver,
     initMobileNavbar,
     initMobileNavbarHamburger,
     initSidebar,
@@ -70,9 +69,6 @@ $(document).ready(function () {
 
     //Active Link
     setActivelink();
-
-    //Update Sidebar Naver
-    updateSidebarNaver();
 
     //Mobile Navbar
     initMobileNavbar();

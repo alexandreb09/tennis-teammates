@@ -128,8 +128,8 @@ Responsive styles
 
   //Layout
   .view-wrapper {
-    width: calc(100% - 60px) !important;
-    margin-left: 60px !important;
+    //width: calc(100% - 60px) !important;
+    //margin-left: 60px !important;
 
     &.is-pushed-messages {
       margin-left: 140px !important;
