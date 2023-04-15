@@ -3,11 +3,11 @@ Main initialization file
 ========================================================================== */
 
 const feather = require('feather-icons');
+
 import {
     initPageLoader,
     switchLayouts,
     changeDemoImages,
-    initWebapp,
     initCollapsibleMenu,
     initStuckHeader,
     initNavbarDropdowns,
@@ -90,7 +90,7 @@ $(document).ready(function () {
             window.matchMedia("(orientation: landscape)").matches
         ) {
             closeSidebarPanel();
-            $(".main-sidebar, .sidebar-brand").removeClass("is-bordered");
+            $(".main-sidebar").removeClass("is-bordered");
         }
 
         $(window).on("resize", function () {
@@ -100,14 +100,9 @@ $(document).ready(function () {
                 window.matchMedia("(orientation: landscape)").matches
             ) {
                 closeSidebarPanel();
-                $(".main-sidebar, .sidebar-brand").removeClass("is-bordered");
+                $(".main-sidebar").removeClass("is-bordered");
             }
         });
-    }
-
-    //Init navbar (Webapp Layout)
-    if ($(".view-wrapper").hasClass("is-webapp")) {
-        initWebapp();
     }
 
     //Collapsible menus

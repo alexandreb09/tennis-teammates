@@ -28,12 +28,6 @@
   z-index: 0;
 }
 
-.is-webapp {
-  .lifestyle-dashboard-bg {
-    height: 385px;
-  }
-}
-
 .lifestyle-dashboard {
   &.lifestyle-dashboard-v1 {
     .dashboard-header-wrapper {
@@ -2124,12 +2118,6 @@ body {
     height: 555px;
   }
 
-  .is-webapp {
-    .lifestyle-dashboard-bg {
-      height: 565px;
-    }
-  }
-
   .lifestyle-dashboard {
     &.lifestyle-dashboard-v1 {
       .dashboard-header-wrapper {
@@ -2337,12 +2325,6 @@ body {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .is-webapp {
-    .lifestyle-dashboard-bg {
-      height: 435px;
-    }
-  }
-
   .lifestyle-dashboard {
     &.lifestyle-dashboard-v1 {
       .is-flex-tablet-p {

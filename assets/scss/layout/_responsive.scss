@@ -51,10 +51,6 @@ Responsive styles
       margin-left: 4px;
 
       &:not(.is-bordered) {
-        .sidebar-brand {
-          width: 56px !important;
-        }
-
         .sidebar-inner {
           .icon-menu,
           .bottom-menu {
@@ -67,10 +63,6 @@ Responsive styles
 
       &.is-bordered {
         width: 60px !important;
-
-        .sidebar-brand {
-          width: 60px !important;
-        }
 
         .sidebar-inner {
           .icon-menu,
@@ -88,10 +80,6 @@ Responsive styles
           bottom: -3px !important;
         }
       }
-    }
-
-    .sidebar-brand {
-      width: 60px !important;
     }
 
     .sidebar-inner {
@@ -121,26 +109,13 @@ Responsive styles
     left: 60px;
   }
 
-  .mobile-main-sidebar,
-  .mobile-subsidebar {
-    display: none !important;
-  }
-
   //Layout
   .view-wrapper {
-    //width: calc(100% - 60px) !important;
-    //margin-left: 60px !important;
+    //width: calc(100% - 200px) !important;
+    //margin-left: 200px !important;
 
     &.is-pushed-messages {
       margin-left: 140px !important;
-      width: calc(100% - 140px) !important;
-    }
-
-    &.is-webapp {
-      .is-stuck {
-        margin-left: 0 !important;
-        width: 100% !important;
-      }
     }
   }
 
@@ -243,15 +218,8 @@ Responsive styles
     }
   }
 
-  //Toolbar
-  .toolbar {
-    .toolbar-notifications {
-      display: none;
-    }
-  }
-
   .huro-hamburger:not(.is-visible) {
-    display: none !important;
+    //display: none !important;
   }
 
   //Sidebars
@@ -275,14 +243,8 @@ Responsive styles
   .view-wrapper {
     width: 100% !important;
     margin-left: 0 !important;
-    margin-top: 60px !important;
     padding-left: 40px;
     padding-right: 40px;
-
-    &.is-webapp {
-      padding-top: 70px !important;
-      margin-top: 0 !important;
-    }
 
     &.is-explore {
       padding-left: 0 !important;
@@ -291,11 +253,6 @@ Responsive styles
   }
 
   .page-title {
-    &.is-webapp {
-      display: flex !important;
-      margin-top: 0;
-    }
-
     &.is-project-details {
       .huro-hamburger {
         margin-left: 7px !important;
@@ -382,7 +339,6 @@ Responsive styles
       .navbar-dropdown {
         position: absolute;
         display: none;
-        position: absolute;
         top: 100%;
         z-index: 3;
         background: $white;
@@ -394,15 +350,8 @@ Responsive styles
     }
   }
 
-  //Toolbar
-  .toolbar {
-    .toolbar-notifications {
-      display: none;
-    }
-  }
-
   .huro-hamburger:not(.is-visible) {
-    display: none !important;
+    //display: none !important;
   }
 
   //Sidebar
@@ -431,30 +380,21 @@ Responsive styles
   //Layout
   .view-wrapper {
     width: 100% !important;
-    margin-left: 0 !important;
-    margin-top: 60px !important;
+    margin-left: 0;
 
-    &.is-webapp {
-      padding-top: 0 !important;
+    &.is-pushed-block{
+      //margin-left: 200px !important;
+      margin-left: 0 !important;
     }
   }
 
   .page-title {
-    margin-top: 20px;
-
-    &.is-webapp {
-      display: flex !important;
-      margin-top: 0;
-    }
+    //margin-top: 20px;
 
     &.is-project-details {
       .huro-hamburger {
         margin-left: -4px !important;
       }
-    }
-
-    .title-wrap {
-      margin-left: 0;
     }
   }
 
@@ -484,22 +424,11 @@ Responsive styles
   .panel-close {
     display: none !important;
   }
-
-  .mobile-main-sidebar,
-  .mobile-subsidebar {
-    display: none !important;
-  }
 }
 
 @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2)  and (orientation: portrait) {
     .webapp-navbar, .webapp-navbar-clean {
       display: block !important;
-    }
-
-    .page-title {
-      &.is-webapp {
-        display: none !important;
-      }
     }
 }
 

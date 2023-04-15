@@ -11,21 +11,6 @@
 .food-delivery-dashboard {
   display: flex;
 
-  &.is-webapp {
-    margin-top: 30px;
-
-    > .right {
-      .sticky-panel {
-        height: calc(100% - 120px) !important;
-
-        &.is-stretched {
-          height: calc(100% - 120px);
-          top: 100px;
-        }
-      }
-    }
-  }
-
   .left {
     width: 70%;
 

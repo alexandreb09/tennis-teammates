@@ -14,19 +14,6 @@
   align-items: center;
   margin-bottom: 20px;
 
-  &.is-webapp {
-    padding-top: 30px;
-    margin: 0 auto 20px auto;
-
-    &.flex-list-v1 {
-      max-width: 880px;
-    }
-
-    &.flex-list-v2 {
-      max-width: 940px;
-    }
-  }
-
   &.is-reversed {
     flex-direction: row-reverse;
 

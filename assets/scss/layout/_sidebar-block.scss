@@ -607,13 +607,24 @@ body {
 
 @media only screen and (max-width: 767px) {
   .sidebar-block {
-    display: none;
+    transition: left .3s ease, right 0.3s ease;
+
+    &.is-active{
+      width: 200px;
+    }
+    .sidebar-block-inner {
+      .single-link {
+        margin: 0 1rem 0.15rem 1rem;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .sidebar-block {
-    display: none;
+    &.is-active{
+    }
+  //  display: none;
   }
 }
 

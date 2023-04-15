@@ -106,65 +106,6 @@ body {
     width: calc(100% - 160px) !important;
   }
 
-  &.is-webapp {
-    padding-top: 80px;
-    margin-left: 0 !important;
-    width: 100% !important;
-
-    &.is-webapp-lg {
-      padding-top: 100px;
-    }
-
-    .is-stuck {
-      position: fixed;
-      top: 78px;
-      left: 0;
-      margin-left: 0;
-      width: 100%;
-      z-index: 69;
-
-      &.stuck-header {
-        padding-right: 20px !important;
-
-        .form-head-inner,
-        .form-header-inner {
-          max-width: 1240px;
-          margin: 0 auto;
-        }
-      }
-    }
-
-    .has-webapp-spacing {
-      margin-top: 30px;
-    }
-
-    .page-content-inner {
-      margin-top: 30px;
-    }
-
-    .card-grid-toolbar,
-    .tile-grid-toolbar,
-    .user-grid-toolbar,
-    .list-view-toolbar,
-    .list-flex-toolbar,
-    .datatable-toolbar,
-    .kanban-toolbar {
-      margin-top: 30px;
-    }
-
-    .flex-list-v1 {
-      max-width: 880px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .flex-list-v2 {
-      max-width: 940px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
   .is-stuck {
     position: fixed;
     top: 0;
@@ -229,17 +170,14 @@ body {
   height: 60px;
   margin-bottom: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   z-index: 6;
 
-  &.is-webapp {
-    display: none;
-    margin-bottom: 0;
-  }
-
   .title-wrap {
-    margin-left: 1rem;
+    .title {
+      margin-left: 1rem;
+    }
 
     h1 {
       text-align: left;
@@ -631,20 +569,6 @@ body {
 ========================================================================== */
 
 @media (max-width: 767px) {
-  .view-wrapper {
-    &.is-webapp {
-      .card-grid-toolbar,
-      .tile-grid-toolbar,
-      .user-grid-toolbar,
-      .list-view-toolbar,
-      .list-flex-toolbar,
-      .datatable-toolbar,
-      .kanban-toolbar {
-        margin-top: 0 !important;
-      }
-    }
-  }
-
   .page-title {
     .toolbar {
       .control {
@@ -655,29 +579,9 @@ body {
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .view-wrapper {
-    &.is-webapp {
-      .card-grid-toolbar,
-      .tile-grid-toolbar,
-      .user-grid-toolbar,
-      .list-view-toolbar,
-      .list-flex-toolbar,
-      .datatable-toolbar,
-      .kanban-toolbar {
-        margin-top: 0 !important;
-      }
-    }
-  }
-
   .page-content-wrapper {
     .page-content {
       padding: 0;
-    }
-  }
-
-  .page-title {
-    .title-wrap {
-      margin-left: 0;
     }
   }
 }

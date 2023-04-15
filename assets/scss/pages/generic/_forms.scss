@@ -17,10 +17,6 @@ Form Layouts
   max-width: 740px;
   margin: 0 auto;
 
-  &.is-webapp {
-    margin-top: 30px;
-  }
-
   &.is-split {
     max-width: 840px;
 
@@ -764,13 +760,6 @@ body {
 /* ==========================================================================
 2. Stepper Form
 ========================================================================== */
-
-.is-webapp {
-  .stepper-form {
-    max-width: 880px;
-    margin: 0 auto;
-  }
-}
 
 .stepper-form {
   position: relative;
