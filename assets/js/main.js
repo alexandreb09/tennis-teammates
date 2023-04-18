@@ -54,7 +54,7 @@ import {
 initPageLoader();
 
 $(document).ready(function () {
-    //Swicth to Admin / Webapp
+    // Switch to Admin / Webapp
     switchLayouts();
 
     if (env === "development") {

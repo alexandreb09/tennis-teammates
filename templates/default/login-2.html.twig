@@ -65,7 +65,7 @@
                                 {% if error %}
                                     <div class="field">
                                         <div class="message is-danger">
-                                            <a class="delete"></a>
+                                            <button class="delete" onclick="this.remove()"></button>
                                             <div class="message-body">
                                                 {{ error.messageKey|trans(error.messageData, 'security') }}
                                             </div>
@@ -95,7 +95,7 @@
 
                                 <div class="setting-item">
                                     <label class="form-switch is-primary">
-                                        <input type="checkbox" class="is-switch" id="busy-mode-toggle">
+                                        <input name="_remember_me" type="checkbox" class="is-switch" id="busy-mode-toggle">
                                         <i></i>
                                     </label>
                                     <div class="setting-meta">

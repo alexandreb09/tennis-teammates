@@ -17,11 +17,15 @@ security:
             lazy: true
             provider: app_user_provider
 
-            form_login:
-                # "app_login" is the name of the route created previously
-                login_path: app_login
-                check_path: app_login
-                enable_csrf: true
+            custom_authenticators:
+                - App\Security\CustomAuthenticator
+
+#            form_login:
+#                # "app_login" is the name of the route created previously
+#                login_path: app_login
+#                check_path: app_login
+#                enable_csrf: true
+
 
             # by default, the feature allows 5 login attempts per minute
             login_throttling: null
@@ -29,11 +33,10 @@ security:
             logout:
                 path: app_logout
 
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#the-firewall
-
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
+            remember_me:
+                secret: '%kernel.secret%' # required
+                lifetime: 604800 # 1 week in seconds
+#                signature_properties: ['password', 'updatedAt']
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
