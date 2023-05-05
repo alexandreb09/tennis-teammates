@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('register-validation') }}
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        window.PATH_REGISTER_SUBMIT_CODE = "{{ path('app_register_verify_email_code',  { token: registrationToken }) }}";
+        window.PATH_LOGIN = "{{ path('app_login') }}";
+    </script>
+
+    {{ encore_entry_script_tags('register-validation') }}
+{% endblock %}
+
+{% block body %}
+<div id="huro-app" class="app-wrapper">
+
+    <!--Full pageloader-->
+    <div class="pageloader is-full"></div>
+    <div class="infraloader is-full is-active"></div>
+
+    <div class="auth-wrapper">
+        <!--Page body-->
+        <div class="auth-wrapper-inner is-single">
+            <!--Fake navigation-->
+            <div class="auth-nav">
+                <div class="left"></div>
+                <div class="center">
+                    <a href="{{ path('homepage') }}" class="header-item">
+{#                        <img class="light-image" src="{{ asset('/icons/logo-2.svg') }}" alt="Icon tennis teammates">#}
+{#                        <img class="dark-image" src="{{ asset('/icons/logo-2.svg') }}" alt="Icon tennis teammates">#}
+                        <div class="light-image">
+                            {{ source('@public_path'~asset('/icons/logo-2.svg')) }}
+                        </div>
+                    </a>
+                </div>
+                <div class="right">
+                    <label class="dark-mode ml-auto">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+            <!--Single Centered Form-->
+            <div class="single-form-wrap">
+
+                <div class="inner-wrap">
+                    <!--Form Title-->
+                    <div class="auth-head">
+                        <h2>Confirmer votre email</h2>
+{#                        <p>Veuillez vous connecter</p>#}
+                        <p>
+                            Veuillez saisir le code envoyé par email.
+                        </p>
+                    </div>
+
+                    <!--Form-->
+                    <div class="form-card">
+
+                        <div id="otp" class="is-flex is-flex-direction-row is-justify-content-center">
+                            <label for="first"></label>
+                            <input class="input mx-2 my-4" type="text" id="first" maxlength="1" />
+                            <label for="second"></label>
+                            <input class="input mx-2 my-4" type="text" id="second" maxlength="1" />
+                            <label for="third"></label>
+                            <input class="input mx-2 my-4" type="text" id="third" maxlength="1" />
+                            <label for="fourth"></label>
+                            <input class="input mx-2 my-4" type="text" id="fourth" maxlength="1" />
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-primary is-fullwidth">Valider</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

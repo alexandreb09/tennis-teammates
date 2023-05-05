@@ -19,7 +19,6 @@
   z-index: 999998;
   opacity: 0;
   transition: -webkit-opacity 0.35s ease-out;
-  transition: opacity 0.35s ease-out;
   transition: opacity 0.35s ease-out, -webkit-transform 0.35s ease-out;
   will-change: opacity;
   pointer-events: none;

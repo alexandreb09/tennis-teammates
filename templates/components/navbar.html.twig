@@ -20,8 +20,11 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
+                        {% if app.user %}
+                        <a class="button is-primary" href="{{ path('app_logout') }}">Déconnexion</a>
+                        {% else %}
                         <a class="button is-primary" href="{{ path('app_login') }}">Connexion</a>
-                        {#                                <a class="button is-primary is-outlined" href="#">Sign Up</a>#}
+                        {% endif %}
                     </div>
                 </div>
             </div>

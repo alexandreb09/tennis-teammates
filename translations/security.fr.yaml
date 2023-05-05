@@ -1,0 +1,3 @@
+security:
+    login:
+        email_not_verified: Vous devez valider votre email afin de vous connecter. Un email de vérification vous a été envoyé à l'adresse %email%.

@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -29,6 +29,9 @@ class DefaultController extends AbstractController
     #[Route('/profil', name: 'profil')]
     public function profil(): Response
     {
+        /** @var User $user */
+        $user = $this->getUser();
+//        $player  = $user->getPlayer();
         return $this->render('default/profil.html.twig', [
         ]);
     }

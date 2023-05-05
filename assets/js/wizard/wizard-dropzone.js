@@ -1,12 +1,12 @@
 Dropzone.autoDiscover = false;
 
 // Get the template HTML and remove it from the doument
-var previewNode = document.querySelector("#template");
+let previewNode = document.querySelector("#template");
 previewNode.id = "";
-var previewTemplate = previewNode.parentNode.innerHTML;
+let previewTemplate = previewNode.parentNode.innerHTML;
 previewNode.parentNode.removeChild(previewNode);
 
-var myDropzone = new Dropzone(document.body, {
+let myDropzone = new Dropzone(document.body, {
     // Make the whole body a dropzone
     url: "https://www.cssninja.io/dropzone.php", // Set the url
     //thumbnailWidth: 80,
@@ -44,7 +44,7 @@ myDropzone.on("sending", function (file) {
 });
 
 // Hide the total progress bar when nothing's uploading anymore
-myDropzone.on("queuecomplete", function (progress) {
+myDropzone.on("queuecomplete", function () {
     document.querySelector("#total-progress").style.opacity = "0";
 });
 
@@ -61,22 +61,22 @@ document.querySelector("#actions .cancel").onclick = function () {
 // Now fake the file upload, since GitHub does not handle file uploads
 // and returns a 404
 
-var minSteps = 6,
+let minSteps = 6,
     maxSteps = 60,
     timeBetweenSteps = 100,
     bytesPerStep = 100000;
 
 myDropzone.uploadFiles = function (files) {
-    var self = this;
+    let self = this;
 
-    for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        var totalSteps = Math.round(
+    for (let i = 0; i < files.length; i++) {
+        let file = files[i];
+        let totalSteps = Math.round(
             Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep))
         );
 
-        for (var step = 0; step < totalSteps; step++) {
-            var duration = timeBetweenSteps * (step + 1);
+        for (let step = 0; step < totalSteps; step++) {
+            let duration = timeBetweenSteps * (step + 1);
             setTimeout(
                 (function (file, totalSteps, step) {
                     return function () {
@@ -92,7 +92,7 @@ myDropzone.uploadFiles = function (files) {
                             file.upload.progress,
                             file.upload.bytesSent
                         );
-                        if (file.upload.progress == 100) {
+                        if (file.upload.progress === 100) {
                             file.status = Dropzone.SUCCESS;
                             self.emit("success", file, "success", null);
                             self.emit("complete", file);

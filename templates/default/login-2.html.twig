@@ -63,9 +63,9 @@
                             <div id="signin-form" class="login-form">
                                 <!-- Errors -->
                                 {% if error %}
-                                    <div class="field">
+                                    <div class="field" ontransitionend="this.remove()">
                                         <div class="message is-danger">
-                                            <button class="delete" onclick="this.remove()"></button>
+                                            <button class="delete" onclick="this.parentElement.parentElement.style.opacity='0'"></button>
                                             <div class="message-body">
                                                 {{ error.messageKey|trans(error.messageData, 'security') }}
                                             </div>

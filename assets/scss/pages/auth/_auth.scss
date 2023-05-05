@@ -1098,7 +1098,7 @@ body {
   }
 
   .carousel-item {
-    margin: 0 10x;
+    margin: 0 10px;
   }
 
   .image-wrapper {
@@ -1642,6 +1642,10 @@ body {
 
         .h-button {
           margin-top: 10px;
+        }
+
+        #otp input {
+          width: 4ch;
         }
       }
     }

@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -33,28 +34,48 @@ class RegistrationFormType extends AbstractType
 //                    ]),
 //                ],
 //            ])
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+//            ->add('plainPassword', PasswordType::class, [
+//
+//                'label' => 'Mot de passe',
+//                'attr' => [
+//                    'autocomplete' => 'new-password',
+//                ],
+//            ])
+            ->add('plainPassword', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'invalid_message' => 'Les deux mots de passe sont différents.',
+                'options' => ['attr' => ['class' => 'password-field']],
+                'required' => true,
                 'mapped' => false,
-                'label' => 'Mot de passe',
-                'attr' => [
-                    'autocomplete' => 'new-password',
+                'first_options'  => [
+                    // instead of being set onto the object directly,
+                    // this is read and encoded in the controller
+                    'label' => 'Mot de passe',
+                    'attr' => [
+                        'autocomplete' => 'new-password',
+                    ],
+                    'bulma_icon' => [
+                        'icon' => 'lock',
+                        'position' => 'left',
+                    ],
+                    'constraints' => [
+                        new NotBlank([
+                            'message' => 'Veuillez saisir un mot de passe',
+                        ]),
+                        new Length([
+                            'min' => 8,
+                            'minMessage' => 'Le mot de passe doit contenir au minimum {{ limit }} caractères',
+                            // max length allowed by Symfony for security reasons
+                            'max' => 4096,
+                        ]),
+                    ],
                 ],
-                'bulma_icon' => [
-                    'icon' => 'lock',
-                    'position' => 'left',
-                ],
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez saisir un mot de passe',
-                    ]),
-                    new Length([
-                        'min' => 8,
-                        'minMessage' => 'Le mot de passe doit contenir au minimum {{ limit }} caractères',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 4096,
-                    ]),
+                'second_options' => [
+                    'label' => 'Confirmer mot de passe',
+                    'bulma_icon' => [
+                        'icon' => 'lock',
+                        'position' => 'left',
+                    ],
                 ],
             ])
         ;

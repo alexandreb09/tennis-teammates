@@ -1,0 +1,4 @@
+security:
+    registration:
+        invalid_code: Code incorrect.
+        valid_code: Email vérifié ! Vous pouvez désormais vous connecter.

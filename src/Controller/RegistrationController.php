@@ -4,30 +4,32 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
-use App\Repository\UserRepository;
-use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mime\Address;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
+use Twig\Environment;
 
 class RegistrationController extends AbstractController
 {
-    private EmailVerifier $emailVerifier;
+    private EntityManagerInterface $entityManager;
 
-    public function __construct(EmailVerifier $emailVerifier)
+    public function __construct(EntityManagerInterface $entityManager)
     {
-        $this->emailVerifier = $emailVerifier;
+        $this->entityManager = $entityManager;
     }
 
-    #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    /**
+     * @throws \Exception
+     */
+    #[Route('/creation-compte', name: 'app_register')]
+    public function register(Request $request,
+                             UserPasswordHasherInterface $userPasswordHasher,
+                             EntityManagerInterface $entityManager): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -43,6 +45,8 @@ class RegistrationController extends AbstractController
             );
 
             $user->setRoles(['ROLE_USER']);
+            $user->setRegistrationToken($user->generateToken());
+            $user->setRegistrationCode(sprintf('%04d', random_int(1, 9999)));
 
             $entityManager->persist($user);
             $entityManager->flush();
@@ -58,41 +62,52 @@ class RegistrationController extends AbstractController
 //            );
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('homepage');
+            return $this->render('registration/register-waiting-validation.html.twig', [
+                'registrationToken' => $user->getRegistrationToken()
+            ]);
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('registration/register-2.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }
 
-    #[Route('/verify/email', name: 'app_verify_email')]
-    public function verifyUserEmail(Request $request, TranslatorInterface $translator, UserRepository $userRepository): Response
+    #[Route('/creation-compte/verification-email/{token}', name: 'app_register_verify_email')]
+    public function verifyUserEmail($token): Response
     {
-        $id = $request->get('id');
-
-        if (null === $id) {
-            return $this->redirectToRoute('app_register');
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['registrationToken' => $token]);
+        if (!$user){
+            return $this->redirectToRoute('app_login');
         }
 
-        $user = $userRepository->find($id);
+        return $this->render('registration/register-waiting-validation.html.twig', [
+            "registrationToken" => $user->getRegistrationToken()
+        ]);
+    }
 
-        if (null === $user) {
-            return $this->redirectToRoute('app_register');
+    #[Route('/creation-compte/verification-email/{token}/code', name: 'app_register_verify_email_code', methods: 'POST')]
+    public function verifyUserEmailCode(Request $request,
+                                        TranslatorInterface $translator,
+                                        $token): Response
+    {
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['registrationToken' => $token]);
+        if (!$user){
+            return new JsonResponse(['message' => 'Invalid route.'], 404);
         }
 
-        // validate email confirmation link, sets User::isVerified=true and persists
-        try {
-            $this->emailVerifier->handleEmailConfirmation($request, $user);
-        } catch (VerifyEmailExceptionInterface $exception) {
-            $this->addFlash('verify_email_error', $translator->trans($exception->getReason(), [], 'VerifyEmailBundle'));
+        $requestBody = json_decode($request->getContent(), true);
+        $code = $requestBody['code'];
 
-            return $this->redirectToRoute('app_register');
+        if ($user->getRegistrationCode() != $code){
+            return new JsonResponse(['message' => $translator->trans("security.registration.invalid_code")]);
         }
 
-        // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        $user->setIsVerified(true);
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
 
-        return $this->redirectToRoute('app_register');
+        $this->addFlash('success', $translator->trans('security.registration.valid_code'));
+
+        return new JsonResponse(['url' => $this->redirectToRoute('app_login')]);
     }
 }

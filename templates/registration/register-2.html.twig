@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('register') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('register') }}
+{% endblock %}
+
+{% block body %}
+<div id="huro-app" class="app-wrapper">
+
+    <!--Full pageloader-->
+    <div class="pageloader is-full"></div>
+    <div class="infraloader is-full is-active"></div>
+
+    <div class="auth-wrapper">
+        <!--Page body-->
+        <div class="auth-wrapper-inner is-single">
+            <!--Fake navigation-->
+            <div class="auth-nav">
+                <div class="left"></div>
+                <div class="center">
+                    <a href="{{ path('homepage') }}" class="header-item">
+{#                        <img class="light-image" src="{{ asset('/icons/logo-2.svg') }}" alt="Icon tennis teammates">#}
+{#                        <img class="dark-image" src="{{ asset('/icons/logo-2.svg') }}" alt="Icon tennis teammates">#}
+                        <div class="light-image">
+                            {{ source('@public_path'~asset('/icons/logo-2.svg')) }}
+                        </div>
+                    </a>
+                </div>
+                <div class="right">
+                    <label class="dark-mode ml-auto">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+
+            <!--Single Centered Form-->
+            <div class="single-form-wrap">
+
+                <div class="inner-wrap">
+                    <!--Form Title-->
+                    <div class="auth-head">
+                        <h2>Créer un compte</h2>
+{#                        <p>Veuillez vous connecter</p>#}
+                        <p>
+                            Vous avez déjà un compte ?
+                            <a href="{{ path('app_login') }}">Connectez-vous</a>
+                        </p>
+                    </div>
+
+                    <!--Form-->
+                    <div class="form-card">
+                        {{ form_start(registrationForm) }}
+
+                        {{ form_errors(registrationForm) }}
+
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword) }}
+
+{#                        {{ form_row(registrationForm.password) }}#}
+                        {#                        {{ form_row(registrationForm.agreeTerms) }}#}
+
+                        {{ form_row(registrationForm._token) }}
+
+                        <div class="field">
+                            <div class="control">
+                                <button type="submit" class="button is-primary is-fullwidth">C'est parti !</button>
+                            </div>
+                        </div>
+
+                        {{ form_end(registrationForm, {render_rest: false}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

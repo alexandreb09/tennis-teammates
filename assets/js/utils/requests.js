@@ -1,4 +1,4 @@
-function fetchJson(url, options){
+export function fetchJson(url, options){
     let headers = {
         'Content-Type': 'application/json',
     };
@@ -17,6 +17,7 @@ function fetchJson(url, options){
                 .then(text => text ? JSON.parse(text): '')
         });
 }
+
 
 function checkStatus(response) {
     if (response.status >= 200 && response.status < 400) {

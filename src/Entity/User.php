@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Exception;
+use JetBrains\PhpStorm\Pure;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -24,13 +26,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private array $roles = [];
 
     /**
-     * @var string The hashed password
+     * @var string|null The hashed password
      */
     #[ORM\Column]
     private ?string $password = null;
 
     #[ORM\Column(type: 'boolean')]
-    private $isVerified = false;
+    private bool $isVerified = false;
+
+    #[ORM\Column(length: 8, nullable: true)]
+    private ?string $registrationCode = null;
+
+    #[ORM\Column(length: 128)]
+    private ?string $registrationToken = null;
 
     public function getId(): ?int
     {
@@ -112,5 +120,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->isVerified = $isVerified;
 
         return $this;
+    }
+
+    public function getRegistrationCode(): ?string
+    {
+        return $this->registrationCode;
+    }
+
+    public function setRegistrationCode(?string $registrationCode): self
+    {
+        $this->registrationCode = $registrationCode;
+
+        return $this;
+    }
+
+    public function getRegistrationToken(): ?string
+    {
+        return $this->registrationToken;
+    }
+
+    public function setRegistrationToken(string $registrationToken): self
+    {
+        $this->registrationToken = $registrationToken;
+
+        return $this;
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function generateToken() : string {
+        return bin2hex(random_bytes(31))."-".sha1($this->getEmail().$this->getId());
     }
 }

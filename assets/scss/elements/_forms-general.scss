@@ -307,6 +307,8 @@ select {
 }
 
 .field {
+  transition: opacity 1s;
+
   &.is-horizontal {
     .field-label {
       .label {

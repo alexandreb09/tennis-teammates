@@ -102,7 +102,7 @@
                     {%- if not loop.first -%}
                         <hr class="dropdown-divider">
                     {%- endif -%}
-                    <label class="dropdown-item label">{{ choice_translation_domain is same as(false) ? key : key|trans({}, choice_translation_domain) }}</label>
+                    <label class="dropdown-item">{{ choice_translation_domain is same as(false) ? key : key|trans({}, choice_translation_domain) }}</label>
                     <div class="px-2">
                         {%- for choice_key, choice in choice_or_group -%}
                             <div class="dropdown-item">
@@ -204,7 +204,8 @@
 {# Labels #}
 
 {%- block form_label -%}
-    {%- set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' label')|trim}) -%}
+{#    {%- set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' label')|trim}) -%}#}
+    {%- set label_attr = label_attr|merge({class: (label_attr.class|default(''))|trim}) -%}
     {{- parent() -}}
 {%- endblock form_label -%}
 
